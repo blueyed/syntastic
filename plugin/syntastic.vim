@@ -558,7 +558,7 @@ endfunction " }}}2
 function! s:skipFile() " {{{2
     let fname = expand('%')
     let skip = get(b:, 'syntastic_skip_checks', 0) || (&buftype != '') ||
-        \ !filereadable(fname) || getwinvar(0, '&diff') || s:ignoreFile(fname) ||
+        \ !filereadable(fname) || s:ignoreFile(fname) ||
         \ fnamemodify(fname, ':e') =~? g:syntastic_ignore_extensions
     if skip
         call syntastic#log#debug(g:SyntasticDebugTrace, 'skipFile: skipping')

@@ -454,7 +454,7 @@ function! SyntasticMake(options) " {{{2
     let $LC_ALL = ''
     " }}}3
 
-    let err_lines = split(system(a:options['makeprg']), "\n", 1)
+    let err_lines = split(substitute(system(a:options['makeprg']), '\n$', '', ''), "\n", 1)
 
     " restore environment variables {{{3
     let $LC_ALL = old_lc_all

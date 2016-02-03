@@ -61,6 +61,7 @@ function! SyntaxCheckers_python_pylama_GetLocList() dict
         endif
         if e['text'] =~# '\v\[%(mccabe|pep257|pep8)\]$'
             let e['subtype'] = 'Style'
+            let e['type'] = 'W'
         endif
     endfor
 

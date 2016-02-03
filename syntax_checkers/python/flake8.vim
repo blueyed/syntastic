@@ -46,6 +46,7 @@ function! SyntaxCheckers_python_flake8_GetLocList() dict
             " E902 are I/O errors
             if e['type'] ==? 'E' && e['nr'] !~# '\m^9'
                 let e['subtype'] = 'Style'
+                let e['type'] = 'W'
             endif
             call remove(e, 'nr')
         endif

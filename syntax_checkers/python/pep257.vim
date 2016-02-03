@@ -45,6 +45,9 @@ function! SyntaxCheckers_python_pep257_GetLocList() dict
             let e['col'] = get(e, 'col', 0) + 1
         endfor
     endif
+    for e in loclist
+        let e['type'] = 'W'
+    endfor
 
     return loclist
 endfunction
